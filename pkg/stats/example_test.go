@@ -3,7 +3,7 @@ package stats
 import (
 	"fmt"
 
-	"github.com/amirbek-jan/bank/pkg/types"
+	"github.com/amirbek-jan/bank/v2/pkg/types"
 )
 
 func ExampleTotalInCategory() {

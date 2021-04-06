@@ -1,5 +1,5 @@
-module github.com/amirbek-jan/stats
+module github.com/amirbek-jan/stats/v2
 
 go 1.16
 
-require github.com/amirbek-jan/bank v0.0.0-20210406091829-658f00f81ddd
+require github.com/amirbek-jan/bank/v2 v2.0.0-20210406094154-c341f60cd537
