@@ -6,31 +6,58 @@ import (
 	"github.com/amirbek-jan/bank/v2/pkg/types"
 )
 
-func ExampleTotalInCategory() {
-	payments := []types.Payment {
+func ExampleAvg() {
+	payments := []types.Payment{
 		{
-			ID: 1,
-			Amount: 100_00,
-			Category: "mobile",
+			ID:       1,
+			Amount:   53_00,
+			Category: "Cat",
+			Status:   types.StatusOk,
 		},
 		{
-			ID: 2,
-			Amount: 5_00,
-			Category: "computer",
+			ID:       2,
+			Amount:   51_00,
+			Category: "Cat",
+			Status:   types.StatusOk,
 		},
 		{
-			ID: 3,
-			Amount: 10_00,
-			Category: "mobile",
-		},
-		{
-			ID: 4,
-			Amount: 10_00,
-			Category: "deposit",
+			ID:       3,
+			Amount:   52_00,
+			Category: "Cat",
+			Status:   types.StatusFail,
 		},
 	}
-	result := TotalInCategory(payments, "mobile")
-	fmt.Println(result)
-	// Output:
-	// 11000
+
+	fmt.Println(Avg(payments))
+
+	//Output: 5200
+}
+
+func ExampleTotalInCategory() {
+	payments := []types.Payment{
+		{
+			ID:       1,
+			Amount:   10_000_00,
+			Category: "auto",
+			Status:   types.StatusOk,
+		},
+		{
+			ID:       2,
+			Amount:   20_000_00,
+			Category: "pharmacy",
+			Status:   types.StatusOk,
+		},
+		{
+			ID:       3,
+			Amount:   30_000_00,
+			Category: "restaurant",
+			Status:   types.StatusFail,
+		},
+	}
+
+	inCategory := types.Category("auto")
+	totalInCategory := TotalInCategory(payments, inCategory)
+	fmt.Println(totalInCategory)
+	//Output:  1000000
+
 }
